@@ -9,4 +9,13 @@
     tools:context=".HomeScreen$PlaceholderFragment"
     android:background="#ff69d2e7">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ROLLOVR"
+        android:id="@+id/textTitle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="32dp" />
 </RelativeLayout>
