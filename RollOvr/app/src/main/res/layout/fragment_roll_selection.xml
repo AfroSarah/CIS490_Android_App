@@ -1,0 +1,66 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffa7dbd8">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Roll Selection"
+        android:id="@+id/textTitle"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:autoText="false"
+        android:editable="false"
+        android:textSize="24dp"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select the thickness of your toilet paper."
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:phoneNumber="true" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:background="#E0E4CC"
+        android:id="@+id/radioPly"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/1ply"
+            android:text="1 Ply"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/2ply"
+            android:text="2 Ply"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/3ply"
+            android:text="3 Ply"
+            android:textSize="20dp" />
+
+        </RadioGroup>
+</LinearLayout>
