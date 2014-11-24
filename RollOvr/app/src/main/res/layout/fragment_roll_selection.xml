@@ -44,23 +44,26 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/1ply"
+            android:id="@+id/onePly"
             android:text="1 Ply"
             android:textSize="20dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/2ply"
+            android:id="@+id/twoPly"
             android:text="2 Ply"
             android:textSize="20dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/3ply"
+            android:id="@+id/threePly"
             android:text="3 Ply"
             android:textSize="20dp" />
 
         </RadioGroup>
+
+
+
 </LinearLayout>

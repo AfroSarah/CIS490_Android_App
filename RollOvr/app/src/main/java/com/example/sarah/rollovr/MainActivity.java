@@ -5,8 +5,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
 
 //MainActivity: default screen for portrait orientation on a phone//
 public class MainActivity extends Activity {
@@ -16,12 +20,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Get the Fragment Manager//
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        //Add home screen fragment
-        ft.add(R.id.maincontainer, new HomeScreenFragment(), "Home Screen");
-        ft.commit();
+        if(savedInstanceState == null){
+            getFragmentManager().beginTransaction()
+                    .add(R.id.maincontainer, new PlaceholderFragment())
+                    .commit();
+        }
+
+
 
     }
 
@@ -43,5 +48,38 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_home_screen, container, false);
+            return rootView;
+        }
+
+
+    }
+
+
+    //Replaces Fragment with HouseholdFragment
+    public void HouseHoldFragmentStack(){
+        getFragmentManager().beginTransaction()
+                .replace(R.id.maincontainer, new HouseholdFragment())
+                .commit();
+    }
+
+    //Replaces Fragment with Number of Rolls and Type Fragment
+    public void RollSelectionFragmentStack(){
+        getFragmentManager().beginTransaction()
+                .replace(R.id.maincontainer, new RollSelectionFragment());
     }
 }
