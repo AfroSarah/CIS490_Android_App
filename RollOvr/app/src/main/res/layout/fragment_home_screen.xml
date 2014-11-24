@@ -4,4 +4,14 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#ff69d2e7"
-    android:id="@+id/fragHome"></LinearLayout>
+    android:id="@+id/fragHome"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/img_rollovr_logo"
+        android:contentDescription="RollOvr App Logo"
+        android:layout_margin="10dp" />
+</LinearLayout>

@@ -1,17 +1,28 @@
 package com.example.sarah.rollovr;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
+//MainActivity: default screen for portrait orientation on a phone//
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Get the Fragment Manager//
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        //Add home screen fragment
+        ft.add(R.id.maincontainer, new HomeScreenFragment(), "Home Screen");
+        ft.commit();
+
     }
 
 
