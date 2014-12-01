@@ -50,6 +50,9 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void begin(View view){
+        RollSelectionFragmentStack(view);
+    }
 
     /**
      * A placeholder fragment containing a simple view.
@@ -70,16 +73,16 @@ public class MainActivity extends Activity {
     }
 
 
-    //Replaces Fragment with HouseholdFragment
-    public void HouseHoldFragmentStack(){
-        getFragmentManager().beginTransaction()
-                .replace(R.id.maincontainer, new HouseholdFragment())
-                .commit();
-    }
-
     //Replaces Fragment with Number of Rolls and Type Fragment
-    public void RollSelectionFragmentStack(){
-        getFragmentManager().beginTransaction()
-                .replace(R.id.maincontainer, new RollSelectionFragment());
+    public void RollSelectionFragmentStack(View view){
+        Fragment fr = null;
+        if(view == findViewById(R.id.begin)){
+            fr = new RollSelectionFragment();
+        }
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.maincontainer,fr);
+        fragmentTransaction.commit();
     }
 }
