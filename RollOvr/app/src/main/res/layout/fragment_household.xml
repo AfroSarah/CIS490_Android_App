@@ -35,15 +35,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
+        android:entries="@array/householdArray"
+        android:prompt="@string/householdPrompt"
         />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:text="Continue"
         android:id="@+id/household_button"
         android:onClick="nextPage"
-        />
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
