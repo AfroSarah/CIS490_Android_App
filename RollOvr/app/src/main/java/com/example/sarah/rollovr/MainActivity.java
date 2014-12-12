@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
     }
 
     public void begin(View view){
-        RollSelectionFragmentStack(view);
+      PackageSelectionFragmentStack(view);
     }
 
     /**
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
     }
 
     //Replaces current fragment with the Package Selection Fragment
-    public void PackageSelectionFragment(View view){
+    public void PackageSelectionFragmentStack(View view){
         Fragment fr= null;
         if (view == findViewById(R.id.begin)) {
             fr = new PackageSelectionFragment();
