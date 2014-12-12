@@ -5,4 +5,13 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="radioButtonOnePly">
+        <item name="android:background">@drawable/tp_1_ply</item>
+    </style>
+    <style name="radioButtonTwoPly">
+        <item name="android:background">@drawable/tp_2_ply</item>
+    </style>
+    <style name="radioButtonThreePly">
+        <item name="android:background">@drawable/tp_3_ply</item>
+    </style>
 </resources>

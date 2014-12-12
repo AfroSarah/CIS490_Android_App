@@ -8,7 +8,7 @@
     <string name="begin">Begin</string>
 
     <string name="householdPrompt">Number of Residents</string>
-    <string-array name="householdArray">
+    <string-array name="household_array">
         <item>1</item>
         <item>2</item>
         <item>3</item>

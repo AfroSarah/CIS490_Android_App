@@ -46,7 +46,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/onePly"
             android:text="1 Ply"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            style="@style/radioButtonOnePly"/>
 
         <RadioButton
             android:layout_width="wrap_content"

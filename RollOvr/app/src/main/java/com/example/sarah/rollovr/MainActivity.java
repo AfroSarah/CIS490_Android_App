@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
     }
 
 
-    //Replaces Fragment with Number of Rolls and Type Fragment
+    //Replaces Fragment with Number of Rolls Fragment
     public void RollSelectionFragmentStack(View view){
         Fragment fr = null;
         if(view == findViewById(R.id.begin)){
@@ -85,4 +85,17 @@ public class MainActivity extends Activity {
         fragmentTransaction.replace(R.id.maincontainer,fr);
         fragmentTransaction.commit();
     }
-}
+
+    //Replaces current fragment with the Package Selection Fragment
+    public void PackageSelectionFragment(View view){
+        Fragment fr= null;
+        if (view == findViewById(R.id.begin)) {
+            fr = new PackageSelectionFragment();
+        }
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.maincontainer,fr);
+        fragmentTransaction.commit();
+        }
+    }
