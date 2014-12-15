@@ -45,6 +45,7 @@ public class ResultsFragment extends Fragment {
 
     public void confirm(View view){
 
+        estimateDays();
         Calendar c = Properties.getEstimatedDate();
 
         //Set time to midnight
