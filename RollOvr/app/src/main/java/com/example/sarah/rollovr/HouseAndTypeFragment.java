@@ -11,13 +11,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
-public class HouseAndTypeFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
+public class HouseAndTypeFragment extends Fragment{
+
+    private Spinner spinner;
+    private Button nextPageBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,13 +32,52 @@ public class HouseAndTypeFragment extends Fragment implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
 
         Spinner spinner = (Spinner) getView().findViewById(R.id.household_spinner);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity().getBaseContext(),
-                R.array.household_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        List<String> residents = new ArrayList<String>();
+        residents.add("1");
+        residents.add("2");
+        residents.add("3");
+        residents.add("4");
+        residents.add("5");
+        residents.add("6");
+        residents.add("7");
+        residents.add("8");
+        residents.add("9");
+        residents.add("10");
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, residents);
+
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(dataAdapter);
+
+        //Spinner item selection listener
+        addListenerOnSpinnerItemSelection();
+
+        //Button click listener
+        addListenerOnButton();
+
+    }
+
+    //Add spinner data
+    public void addListenerOnSpinnerItemSelection(){
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener());
+    }
+
+    //get the selected dropdown list value
+    public void addListenerOnButton(){
+        spinner = (Spinner) getView().findViewById(R.id.household_spinner);
+        //Button
+        nextPageBtn = (Button) getView().findViewById(R.id.household_button);
+
+        nextPageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),""+String.valueOf(spinner.getSelectedItem()),
+                        Toast.LENGTH_LONG).show();
+                Properties.setHouseHold(Integer.valueOf((Integer) spinner.getSelectedItem()));
+            }
+        });
+        //Button click listener
 
     }
 
@@ -82,21 +128,6 @@ public class HouseAndTypeFragment extends Fragment implements AdapterView.OnItem
 
 
         return v;
-    }
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
-
-      adapterView.getItemAtPosition(i);
-      Properties.setHouseHold(i);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
 
