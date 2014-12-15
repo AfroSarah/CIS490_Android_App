@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="RollOvrTheme" parent="@style/_RollOvrTheme"/>
+
+  <style name="_RollOvrTheme" parent="android:Theme.Light">
+
+    <item name="android:editTextStyle">@style/EditTextRollOvrTheme</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewRollOvrTheme</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxRollOvrTheme</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonRollOvrTheme</item>
+
+    <item name="android:buttonStyle">@style/ButtonRollOvrTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonRollOvrTheme</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerRollOvrTheme</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemRollOvrTheme</item>
+
+  </style>
+
+</resources>

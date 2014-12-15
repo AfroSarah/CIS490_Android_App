@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="EditTextRollOvrTheme" parent="android:Widget.EditText">
+	  <item name="android:background">@drawable/rollovrtheme_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="AutoCompleteTextViewRollOvrTheme" parent="android:Widget.AutoCompleteTextView">
+      <item name="android:dropDownSelector">@drawable/rollovrtheme_list_selector_holo_light</item>
+	  <item name="android:background">@drawable/rollovrtheme_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="CheckBoxRollOvrTheme" parent="android:Widget.CompoundButton.CheckBox">
+      <item name="android:button">@drawable/rollovrtheme_btn_check_holo_light</item>
+  </style>
+
+  <style name="RadioButtonRollOvrTheme" parent="android:Widget.CompoundButton.RadioButton">
+      <item name="android:button">@drawable/rollovrtheme_btn_radio_holo_light</item>
+  </style>
+
+  <style name="ButtonRollOvrTheme" parent="android:Widget.Button">
+	  <item name="android:background">@drawable/rollovrtheme_btn_default_holo_light</item>
+	  <item name="android:minHeight">48dip</item>
+	  <item name="android:minWidth">64dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ImageButtonRollOvrTheme" parent="android:Widget.ImageButton">
+	  <item name="android:background">@drawable/rollovrtheme_btn_default_holo_light</item>
+  </style>
+
+  <style name="SpinnerRollOvrTheme" parent="android:Widget.Spinner">
+      <item name="android:background">@drawable/rollovrtheme_spinner_background_holo_light</item>
+      <item name="android:dropDownSelector">@drawable/rollovrtheme_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerDropDownItemRollOvrTheme" parent="android:Widget.DropDownItem.Spinner">
+      <item name="android:checkMark">@drawable/rollovrtheme_btn_radio_holo_light</item>
+  </style>
+</resources>
