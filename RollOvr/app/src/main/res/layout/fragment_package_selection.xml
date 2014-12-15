@@ -7,27 +7,44 @@
     android:id="@+id/fragPackage"
     android:weightSum="1">
 
-    <ImageButton
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton_TP12"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/button_tp_12"
-        android:contentDescription="12 pack toilet paper" />
+        android:rowCount="1"
+        android:columnCount="3">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton_TP24"
-        android:layout_gravity="left"
-        android:src="@drawable/button_tp_24"
-        android:contentDescription="24 pack toilet paper" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton_TP12"
+            android:src="@drawable/button_tp_12"
+            android:contentDescription="12 pack toilet paper"
+            android:layout_gravity="left" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton_TP24"
+            android:layout_gravity="left"
+            android:src="@drawable/button_tp_24"
+            android:contentDescription="24 pack toilet paper" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton_TP48"
+            android:src="@drawable/button_tp_48"
+            android:contentDescription="48 pack toilet paper"
+            android:layout_gravity="left" />
+    </GridLayout>
+
+    <Button
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton_TP48"
-        android:layout_gravity="right"
-        android:src="@drawable/button_tp_48"
-        android:contentDescription="48 pack toilet paper" />
+        android:text="Continue"
+        android:id="@+id/package_button"
+        android:onClick="nextPage"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
