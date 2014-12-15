@@ -28,7 +28,7 @@
         android:layout_height="68dp"
         android:layout_marginTop="150dp"
         android:id="@+id/returnHome"
-        android:text="@string/return"
+        android:text="@string/returnHome"
         android:onClick="returnHome"
         android:layout_gravity="center_horizontal"
         android:textSize="20dp" />
