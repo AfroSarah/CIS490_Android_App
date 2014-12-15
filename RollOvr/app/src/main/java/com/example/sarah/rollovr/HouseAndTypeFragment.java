@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class HouseAndTypeFragment extends Fragment implements AdapterView.OnItemSelectedListener {
@@ -52,17 +53,23 @@ public class HouseAndTypeFragment extends Fragment implements AdapterView.OnItem
                     case(R.id.imageButton_onePly):
                         if(Properties.getHouseHold() != null)
                         Properties.setRollType(1);
-                        ResultsFragmentStack(view);
+                        if(Properties.getHouseHold() == 1){
+                            Toast.makeText(getActivity(), "One Ply Roll",Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     case(R.id.imageButton_twoPly):
                         if(Properties.getHouseHold() != null)
-                        Properties.setPackageAmt(2);
-                        ResultsFragmentStack(view);
+                        Properties.setRollType(2);
+                        if(Properties.getRollType() == 2){
+                            Toast.makeText(getActivity(), "Two Ply Roll", Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     case(R.id.imageButton_threePly):
                         if(Properties.getHouseHold() != null)
-                        Properties.setPackageAmt(3);
-                        ResultsFragmentStack(view);
+                        Properties.setRollType(3);
+                        if(Properties.getRollType() == 3){
+                            Toast.makeText(getActivity(), "Three Ply Roll", Toast.LENGTH_SHORT).show();
+                        }
                         break;
                 }
 

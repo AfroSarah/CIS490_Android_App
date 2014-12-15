@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-
+import android.widget.Toast;
 
 
 public class PackageSelectionFragment extends Fragment {
@@ -41,15 +41,27 @@ public class PackageSelectionFragment extends Fragment {
                 switch(view.getId()){
                     case(R.id.imageButton_TP12):
                         Properties.setPackageAmt(12);
-                        HouseHoldFragmentStack(view);
+                     //  HouseHoldFragmentStack(view);
+                        if(Properties.getPackageAmt() == 12)
+                        {
+                            Toast.makeText(getActivity(),"12",Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     case(R.id.imageButton_TP24):
                         Properties.setPackageAmt(24);
-                        HouseHoldFragmentStack(view);
+
+                        if(Properties.getPackageAmt() == 24){
+                            Toast.makeText(getActivity(), "24 Rolls", Toast.LENGTH_SHORT).show();
+                        }
+
                         break;
                     case(R.id.imageButton_TP48):
                         Properties.setPackageAmt(48);
-                        HouseHoldFragmentStack(view);
+
+                        if(Properties.getPackageAmt() == 48){
+                            Toast.makeText(getActivity(), "48 Rolls", Toast.LENGTH_SHORT).show();
+                        }
+
                         break;
                 }
 
