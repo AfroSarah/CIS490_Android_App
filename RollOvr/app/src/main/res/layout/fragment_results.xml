@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragResults"
-    android:background="#ffa7dbd8">
+    android:background="#69D2E7">
 
 
     <TextView

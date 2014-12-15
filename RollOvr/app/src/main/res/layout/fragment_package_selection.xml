@@ -3,48 +3,90 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
+    android:background="#69D2E7"
+    android:id="@+id/fragPackage"
+=======
     android:background="#ffa7dbd8"
 
+>>>>>>> origin/master
     android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Toilet Paper Package Size"
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:autoText="false"
+        android:editable="false"
+        android:textSize="24dp"
+        android:padding="10dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select toilet paper package size."
+        android:id="@+id/textView2"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center" />
 
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="1"
-        android:columnCount="3">
+        android:columnCount="3"
+        android:layout_marginTop="50dp">
 
         <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton_TP12"
             android:src="@drawable/button_tp_12"
             android:contentDescription="12 pack toilet paper"
-            android:layout_gravity="left" />
+            android:layout_gravity="left"
+            android:theme="@style/AppTheme" />
 
         <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton_TP24"
             android:layout_gravity="left"
             android:src="@drawable/button_tp_24"
-            android:contentDescription="24 pack toilet paper" />
+            android:contentDescription="24 pack toilet paper"
+            android:theme="@style/AppTheme" />
 
         <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton_TP48"
             android:src="@drawable/button_tp_48"
             android:contentDescription="48 pack toilet paper"
-            android:layout_gravity="left" />
+            android:layout_gravity="left"
+            android:theme="@style/AppTheme" />
     </GridLayout>
 
     <Button
         android:layout_width="270dp"
+<<<<<<< HEAD
+        android:layout_height="100dp"
+        android:text="CONTINUE"
+        android:id="@+id/nextPage"
+        android:onClick="nextPage"
+        android:textSize="36dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp" />
+=======
         android:layout_height="wrap_content"
         android:text="Continue"
         android:id="@+id/nextHouseHold"
         android:onClick="nextHouseHold"
         android:textSize="20dp"
         android:layout_gravity="center_horizontal" />
+>>>>>>> origin/master
 
 </LinearLayout>

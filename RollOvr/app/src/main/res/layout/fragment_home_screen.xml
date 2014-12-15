@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffa7dbd8"
+    android:background="#69D2E7"
     android:id="@+id/fragHome"
     android:weightSum="1">
 
@@ -15,15 +15,34 @@
         android:contentDescription="RollOvr App Logo"
         android:layout_margin="10dp" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center"
+        android:src="@drawable/tp_1_ply"
+        android:layout_marginTop="50dp"
+        android:padding="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The Toilet Paper Scheduling App"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textSize="24dp"
+        android:padding="3dp" />
+
     <Button
         android:layout_width="270dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="150dp"
-        android:id="@+id/begin"
-        android:text="@string/begin"
+        android:layout_height="100dp"
+        android:id="@+id/Begin"
+        android:text="BEGIN"
         android:onClick="begin"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp" />
+        android:layout_gravity="center"
+        android:textSize="36dp"
+        android:layout_marginTop="50dp" />
 
 
 </LinearLayout>
