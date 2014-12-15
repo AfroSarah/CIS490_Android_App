@@ -21,11 +21,7 @@
         android:textSize="24dp"
         android:padding="10dp" />
 
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/resultsList"
-        ></ListView>
+
 
     <Button
         android:layout_width="fill_parent"

@@ -49,9 +49,22 @@ public class HouseAndTypeFragment extends Fragment{
         residents.add("9");
         residents.add("10");
 
+        List<Integer> residentsTest = new ArrayList<Integer>();
+        residentsTest.add(1);
+        residentsTest.add(2);
+        residentsTest.add(3);
+        residentsTest.add(4);
+        residentsTest.add(5);
+        residentsTest.add(6);
+        residentsTest.add(7);
+        residentsTest.add(8);
+        residentsTest.add(9);
+        residentsTest.add(10);
+
+
         Spinner spinner = (Spinner) v.findViewById(R.id.household_spinner);
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, residents);
+        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_spinner_item, residentsTest);
 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -68,7 +81,7 @@ public class HouseAndTypeFragment extends Fragment{
         nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),""+String.valueOf(finalSpinner.getSelectedItem()),
+                Toast.makeText(getActivity(),""+ String.valueOf(finalSpinner.getSelectedItem()),
                         Toast.LENGTH_LONG).show();
                 Properties.setHouseHold(Integer.valueOf((Integer) finalSpinner.getSelectedItem()));
 
