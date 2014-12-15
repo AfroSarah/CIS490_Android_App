@@ -1,6 +1,8 @@
 package com.example.sarah.rollovr;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +64,10 @@ public class ResultsFragment extends Fragment {
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
 
+        Toast.makeText(getActivity(),"" + day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
+
+        CompleteFragmentStack(view);
+
 
 
     }
@@ -88,6 +94,18 @@ public class ResultsFragment extends Fragment {
         Properties.setEstimatedDate(calendar);
 
 
+    }
+
+    public void CompleteFragmentStack(View view){
+        Fragment fr= null;
+        if (view == getView().findViewById(R.id.finish_button)) {
+            fr = new HomeScreenFragment();
+        }
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.maincontainer,fr);
+        fragmentTransaction.commit();
     }
 
 }

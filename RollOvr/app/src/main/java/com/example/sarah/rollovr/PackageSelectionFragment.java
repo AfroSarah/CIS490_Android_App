@@ -3,6 +3,7 @@ package com.example.sarah.rollovr;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -22,17 +24,30 @@ public class PackageSelectionFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+
+    }
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View v = inflater.inflate(R.layout.fragment_package_selection, container, false);
+       final View v = inflater.inflate(R.layout.fragment_package_selection, container, false);
 
 
         ImageButton smallPckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP12);
         ImageButton mediumPckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP24);
         ImageButton largePckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP48);
+
+        Button nextPage = (Button)v.findViewById(R.id.nextPage);
+
 
         View.OnClickListener packageListener = new View.OnClickListener() {
             @Override
@@ -63,6 +78,13 @@ public class PackageSelectionFragment extends Fragment {
                         }
 
                         break;
+                    case(R.id.nextPage):
+                        Fragment mFragment = new HouseAndTypeFragment();
+                        FragmentManager fM = getFragmentManager();
+                        FragmentTransaction fT = fM.beginTransaction();
+                        fT.replace(R.id.fragPackage, mFragment).commit();
+                        break;
+
                 }
 
             }
@@ -71,6 +93,7 @@ public class PackageSelectionFragment extends Fragment {
         smallPckBtn.setOnClickListener(packageListener);
         mediumPckBtn.setOnClickListener(packageListener);
         largePckBtn.setOnClickListener(packageListener);
+        nextPage.setOnClickListener(packageListener);
 
 
 
@@ -79,19 +102,20 @@ public class PackageSelectionFragment extends Fragment {
 
     }
 
-    //Replaces Fragment with HouseholdFragment
+
+
+    //Replaces current fragment with the Package Selection Fragment
     public void HouseHoldFragmentStack(View view){
-        if(view != null) {
-            Fragment fr = new HouseAndTypeFragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.replace(R.id.maincontainer, fr);
-            fragmentTransaction.commit();
+        Fragment fr= null;
+        if (view == getView().findViewById(R.id.nextPage)) {
+            fr = new HouseAndTypeFragment();
         }
 
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.maincontainer,fr);
+        fragmentTransaction.commit();
     }
-
-
 
 
 }

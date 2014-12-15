@@ -26,12 +26,17 @@ public class HouseAndTypeFragment extends Fragment{
     private Spinner spinner;
     private Button nextPageBtn;
 
+
+
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_household, container, false);
 
-        super.onCreate(savedInstanceState);
 
-        Spinner spinner = (Spinner) getView().findViewById(R.id.household_spinner);
+
         List<String> residents = new ArrayList<String>();
         residents.add("1");
         residents.add("2");
@@ -44,48 +49,36 @@ public class HouseAndTypeFragment extends Fragment{
         residents.add("9");
         residents.add("10");
 
+        Spinner spinner = (Spinner) v.findViewById(R.id.household_spinner);
+
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, residents);
 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(dataAdapter);
 
-        //Spinner item selection listener
-        addListenerOnSpinnerItemSelection();
-
-        //Button click listener
-        addListenerOnButton();
-
-    }
-
-    //Add spinner data
-    public void addListenerOnSpinnerItemSelection(){
+        //Spinner on item selection listener
         spinner.setOnItemSelectedListener(new OnItemSelectedListener());
-    }
 
-    //get the selected dropdown list value
-    public void addListenerOnButton(){
-        spinner = (Spinner) getView().findViewById(R.id.household_spinner);
+        spinner = (Spinner) v.findViewById(R.id.household_spinner);
         //Button
-        nextPageBtn = (Button) getView().findViewById(R.id.household_button);
+        nextPageBtn = (Button) v.findViewById(R.id.household_button);
 
+        final Spinner finalSpinner = spinner;
         nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),""+String.valueOf(spinner.getSelectedItem()),
+                Toast.makeText(getActivity(),""+String.valueOf(finalSpinner.getSelectedItem()),
                         Toast.LENGTH_LONG).show();
-                Properties.setHouseHold(Integer.valueOf((Integer) spinner.getSelectedItem()));
+                Properties.setHouseHold(Integer.valueOf((Integer) finalSpinner.getSelectedItem()));
+
+
+
             }
         });
-        //Button click listener
 
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_household, container, false);
+
 
         ImageButton onePly = (ImageButton)v.findViewById(R.id.imageButton_onePly);
         ImageButton twoPly = (ImageButton)v.findViewById(R.id.imageButton_twoPly);
@@ -129,6 +122,10 @@ public class HouseAndTypeFragment extends Fragment{
 
         return v;
     }
+
+
+
+
 
 
     //Replaces Fragment with HouseholdFragment
