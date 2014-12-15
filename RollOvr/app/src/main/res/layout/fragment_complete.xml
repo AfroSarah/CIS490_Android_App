@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragComplete"
-    android:background="#ffa7dbd8">
+    android:background="#69D2E7">
 
 
     <ImageView
@@ -22,16 +22,17 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Complete!"
         android:id="@+id/textViewComplete"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="28dp" />
 
     <Button
         android:layout_width="270dp"
-        android:layout_height="68dp"
+        android:layout_height="100dp"
         android:layout_marginTop="150dp"
         android:id="@+id/returnHome"
         android:text="@string/returnHome"
         android:onClick="returnHome"
         android:layout_gravity="center_horizontal"
-        android:textSize="20dp" />
+        android:textSize="32dp" />
 
 </LinearLayout>
