@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 //MainActivity: default screen for portrait orientation on a phone//
 public class MainActivity extends Activity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,20 +71,6 @@ public class MainActivity extends Activity {
         }
 
 
-    }
-
-
-    //Replaces Fragment with Number of Rolls Fragment
-    public void RollSelectionFragmentStack(View view){
-        Fragment fr = null;
-        if(view == findViewById(R.id.begin)){
-            fr = new RollSelectionFragment();
-        }
-
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.maincontainer,fr);
-        fragmentTransaction.commit();
     }
 
     //Replaces current fragment with the Package Selection Fragment

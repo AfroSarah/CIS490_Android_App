@@ -14,4 +14,20 @@
         android:layout_gravity="center_horizontal"
         android:src="@drawable/button_tp_12"
         android:contentDescription="12 pack toilet paper" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_TP24"
+        android:layout_gravity="left"
+        android:src="@drawable/button_tp_24"
+        android:contentDescription="24 pack toilet paper" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_TP48"
+        android:layout_gravity="right"
+        android:src="@drawable/button_tp_48"
+        android:contentDescription="48 pack toilet paper" />
 </LinearLayout>

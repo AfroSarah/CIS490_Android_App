@@ -1,18 +1,13 @@
 package com.example.sarah.rollovr;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
-
-import java.util.*;
 
 
 public class RollSelectionFragment extends Fragment {
@@ -69,7 +64,7 @@ public class RollSelectionFragment extends Fragment {
     //Replaces Fragment with HouseholdFragment
     public void HouseHoldFragmentStack(View view){
         if(view != null) {
-            Fragment fr = new HouseholdFragment();
+            Fragment fr = new HouseAndTypeFragment();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.maincontainer, fr);

@@ -1,5 +1,8 @@
 package com.example.sarah.rollovr;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by Channing on 12/1/2014.
  */
@@ -9,48 +12,45 @@ package com.example.sarah.rollovr;
 public class Estimate {
 
     //Sheets per Person per Day
-    public final int ONE_PLY_PERSON = 80;
-    public final int TWO_PLY_PERSON = 70;
-    public final int THREE_PLY_PERSON = 60;
+    public static final int ONE_PLY_PERSON = 80;
+    public static final int TWO_PLY_PERSON = 70;
+    public static final int THREE_PLY_PERSON = 60;
 
     //Sheets per Roll of Type
-    public final int ONE_PLY_SHEETS = 1000;
-    public final int TWO_PLY_SHEETS = 500;
-    public final int THREE_PLY_SHEETS = 300;
+    public static final int ONE_PLY_SHEETS = 1000;
+    public static final int TWO_PLY_SHEETS = 500;
+    public static final int THREE_PLY_SHEETS = 300;
 
     //Rolls per Packages Available
-    public final int SMALL_PACKAGE = 12;
-    public final int MEDIUM_PACKAGE = 24;
-    public final int LARGE_PACKAGE = 48;
+    public static final int SMALL_PACKAGE = 12;
+    public static final int MEDIUM_PACKAGE = 24;
+    public static final int LARGE_PACKAGE = 48;
 
 
     //Roll Type and Package Size Identifier in Boolean Operations
-    public final int ONE_ROLL_TYPE = 1;
-    public final int TWO_ROLL_TYPE = 2;
-    public final int THREE_ROLL_TYPE = 3;
-    public final String PACKAGE_SMALL = "small";
-    public final String PACKAGE_MEDIUM = "medium";
-    public final String PACKAGE_LARGE = "large";
+    public static final int ONE_ROLL_TYPE = 1;
+    public static final int TWO_ROLL_TYPE = 2;
+    public static final int THREE_ROLL_TYPE = 3;
 
 
     //Variables for Estimation
 
     //Sheets per Roll of Type
-    public Integer r;
+    public static Integer r;
 
     //Sheets per Person
-    public Integer x;
+    public static Integer x;
 
     //Package amount
-    public Integer y;
+    public static Integer y;
 
     //Number of People
-    public Integer z;
+    public static Integer z;
 
     //Days until Restock
-    public int days;
+    public static int days;
 
-    public Integer estimateDays(Integer rollType, String packageAmt, Integer houseHold) {
+    public static Integer estimateDays(Integer rollType, Integer packageAmt, Integer houseHold) {
 
         //Boolean operation of Roll Type Input
         if(rollType == ONE_ROLL_TYPE){
@@ -68,13 +68,13 @@ public class Estimate {
 
 
         //Boolean operation of Package Amount Input
-        if(packageAmt == PACKAGE_SMALL){
+        if(packageAmt == SMALL_PACKAGE){
             y = SMALL_PACKAGE;
         }
-        else if(packageAmt == PACKAGE_MEDIUM){
+        else if(packageAmt == MEDIUM_PACKAGE){
             y = MEDIUM_PACKAGE;
         }
-        else if(packageAmt == PACKAGE_LARGE){
+        else if(packageAmt == LARGE_PACKAGE){
             y = LARGE_PACKAGE;
         }
 
@@ -84,6 +84,8 @@ public class Estimate {
 
         //Calculate
         days = y*r/x*z;
+
+
 
         return days;
     }
