@@ -39,6 +39,32 @@
         android:prompt="@string/householdPrompt"
         />
 
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_onePly"
+        android:layout_gravity="right"
+        android:src="@drawable/tp_1_ply"
+        android:contentDescription="One Ply" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_twoPly"
+        android:layout_gravity="right"
+        android:src="@drawable/tp_2_ply"
+        android:contentDescription="Two Ply" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_threePly"
+        android:layout_gravity="left"
+        android:src="@drawable/tp_3_ply"
+        android:contentDescription="Three Ply" />
+
     <Button
         android:layout_width="270dp"
         android:layout_height="wrap_content"

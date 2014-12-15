@@ -1,25 +1,22 @@
 package com.example.sarah.rollovr;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link PackageSelectionFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- *
- */
 public class PackageSelectionFragment extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
+
 
     public PackageSelectionFragment() {
         // Required empty public constructor
@@ -30,46 +27,56 @@ public class PackageSelectionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_package_selection, container, false);
+       View v = inflater.inflate(R.layout.fragment_package_selection, container, false);
+
+
+        ImageButton smallPckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP12);
+        ImageButton mediumPckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP24);
+        ImageButton largePckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP48);
+
+        View.OnClickListener packageListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                switch(view.getId()){
+                    case(R.id.imageButton_TP12):
+                        Properties.setPackageAmt(12);
+                        HouseHoldFragmentStack(view);
+                        break;
+                    case(R.id.imageButton_TP24):
+                        Properties.setPackageAmt(24);
+                        HouseHoldFragmentStack(view);
+                        break;
+                    case(R.id.imageButton_TP48):
+                        Properties.setPackageAmt(48);
+                        HouseHoldFragmentStack(view);
+                        break;
+                }
+
+            }
+        };
+
+        smallPckBtn.setOnClickListener(packageListener);
+        mediumPckBtn.setOnClickListener(packageListener);
+        largePckBtn.setOnClickListener(packageListener);
+
+
+
+        return v;
+
+
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+    //Replaces Fragment with HouseholdFragment
+    public void HouseHoldFragmentStack(View view){
+        if(view != null) {
+            Fragment fr = new HouseAndTypeFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.maincontainer, fr);
+            fragmentTransaction.commit();
         }
-    }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
     }
 
 
