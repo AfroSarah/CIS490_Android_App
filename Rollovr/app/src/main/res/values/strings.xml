@@ -8,6 +8,8 @@
     <string name="begin">Begin</string>
 
     <string name="householdPrompt">Number of Residents</string>
+    <string name="returnHome">Return</string>
+    <string name="complete">Complete</string>
     <string-array name="household_array">
         <item>1</item>
         <item>2</item>
