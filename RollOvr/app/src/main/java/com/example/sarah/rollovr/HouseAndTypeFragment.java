@@ -37,34 +37,23 @@ public class HouseAndTypeFragment extends Fragment{
 
 
 
-        List<String> residents = new ArrayList<String>();
-        residents.add("1");
-        residents.add("2");
-        residents.add("3");
-        residents.add("4");
-        residents.add("5");
-        residents.add("6");
-        residents.add("7");
-        residents.add("8");
-        residents.add("9");
-        residents.add("10");
 
-        List<Integer> residentsTest = new ArrayList<Integer>();
-        residentsTest.add(1);
-        residentsTest.add(2);
-        residentsTest.add(3);
-        residentsTest.add(4);
-        residentsTest.add(5);
-        residentsTest.add(6);
-        residentsTest.add(7);
-        residentsTest.add(8);
-        residentsTest.add(9);
-        residentsTest.add(10);
+        List<Integer> residents = new ArrayList<Integer>();
+        residents.add(1);
+        residents.add(2);
+        residents.add(3);
+        residents.add(4);
+        residents.add(5);
+        residents.add(6);
+        residents.add(7);
+        residents.add(8);
+        residents.add(9);
+        residents.add(10);
 
 
         Spinner spinner = (Spinner) v.findViewById(R.id.household_spinner);
 
-        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_spinner_item, residentsTest);
+        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(getActivity(), android.R.layout.simple_spinner_item, residents);
 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
