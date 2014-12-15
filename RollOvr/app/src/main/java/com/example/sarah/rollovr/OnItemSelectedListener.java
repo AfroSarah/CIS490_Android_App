@@ -13,7 +13,7 @@ public class OnItemSelectedListener implements AdapterView.OnItemSelectedListene
                                 long id){
 
         Toast.makeText(adapterView.getContext(),
-                "On Item Select: \n" + adapterView.getItemAtPosition(pos).toString(),
+                "Current Household: \n" + adapterView.getItemAtPosition(pos).toString(),
                 Toast.LENGTH_SHORT).show();
 
 

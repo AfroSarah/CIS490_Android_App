@@ -70,10 +70,13 @@ public class HouseAndTypeFragment extends Fragment{
         nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),""+ String.valueOf(finalSpinner.getSelectedItem()),
-                        Toast.LENGTH_LONG).show();
+
                 Properties.setHouseHold(Integer.valueOf((Integer) finalSpinner.getSelectedItem()));
 
+                Fragment mFragment = new ResultsFragment();
+                FragmentManager fM = getFragmentManager();
+                FragmentTransaction fT = fM.beginTransaction();
+                fT.replace(R.id.maincontainer, mFragment).commit();
 
 
             }
@@ -94,7 +97,7 @@ public class HouseAndTypeFragment extends Fragment{
                     case(R.id.imageButton_onePly):
                         if(Properties.getHouseHold() != null)
                         Properties.setRollType(1);
-                        if(Properties.getHouseHold() == 1){
+                        if(Properties.getRollType() == 1){
                             Toast.makeText(getActivity(), "One Ply Roll",Toast.LENGTH_SHORT).show();
                         }
                         break;
@@ -127,19 +130,5 @@ public class HouseAndTypeFragment extends Fragment{
 
 
 
-
-
-
-    //Replaces Fragment with HouseholdFragment
-    public void ResultsFragmentStack(View view){
-        if(view != null) {
-            Fragment fr = new ResultsFragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.replace(R.id.maincontainer, fr);
-            fragmentTransaction.commit();
-        }
-
-    }
 
 }

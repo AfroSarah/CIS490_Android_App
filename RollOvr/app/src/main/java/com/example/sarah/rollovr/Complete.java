@@ -35,7 +35,7 @@ public class Complete extends Fragment {
                         Fragment fr = new HomeScreenFragment();
                         FragmentManager fm = getFragmentManager();
                         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                        fragmentTransaction.replace(R.id.fragHome,fr);
+                        fragmentTransaction.replace(R.id.maincontainer,fr);
                         fragmentTransaction.commit();
 
                         break;

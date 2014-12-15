@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
     //Replaces current fragment with the Package Selection Fragment
     public void PackageSelectionFragmentStack(View view){
         Fragment fr= null;
-        if (view == findViewById(R.id.begin)) {
+        if (view == findViewById(R.id.Begin)) {
             fr = new PackageSelectionFragment();
         }
 

@@ -56,9 +56,9 @@ public class ResultsFragment extends Fragment {
                         Calendar c = Properties.getEstimatedDate();
 
                         //Set time to midnight
-                        c.set(Calendar.HOUR_OF_DAY, 0);
-                        c.set(Calendar.MINUTE, 0);
-                        c.set(Calendar.SECOND, 0);
+                        //c.set(Calendar.HOUR_OF_DAY, 0);
+                        //c.set(Calendar.MINUTE, 0);
+                        //c.set(Calendar.SECOND, 0);
 
                         //Ask our service to set an alarm for that date,
                         // this activity talks to the client that talks to the service
@@ -69,12 +69,13 @@ public class ResultsFragment extends Fragment {
                         int month = c.get(Calendar.MONTH);
                         int day = c.get(Calendar.DAY_OF_MONTH);
 
-                        Toast.makeText(getActivity(),"" + day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
+
+                        Toast.makeText(getActivity(),"Re-up Date " + month + "/" + day + "/" + year, Toast.LENGTH_LONG).show();
 
                         Fragment fr = new Complete();
                         FragmentManager fm = getFragmentManager();
                         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                        fragmentTransaction.replace(R.id.fragResults,fr);
+                        fragmentTransaction.replace(R.id.maincontainer,fr);
                         fragmentTransaction.commit();
 
 
@@ -112,7 +113,19 @@ public class ResultsFragment extends Fragment {
 
         calendar.add(Calendar.DAY_OF_MONTH,days);
 
-        Properties.setEstimatedDate(calendar);
+        int month = 1;
+        int day = 15;
+        int year = 2014;
+
+        Calendar calendarTest = Calendar.getInstance();
+        calendarTest.set(year, Calendar.DECEMBER ,day);
+        calendarTest.add(Calendar.MONTH, month);
+        calendarTest.set(Calendar.HOUR_OF_DAY, 16);
+        calendarTest.set(Calendar.MINUTE, 41);
+        calendarTest.set(Calendar.SECOND, 0);
+
+
+        Properties.setEstimatedDate(calendarTest);
 
 
     }
