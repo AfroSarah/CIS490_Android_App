@@ -119,9 +119,9 @@ public class ResultsFragment extends Fragment {
 
         Calendar calendarTest = Calendar.getInstance();
         calendarTest.set(year, Calendar.DECEMBER ,day);
-        calendarTest.add(Calendar.MONTH, month);
-        calendarTest.set(Calendar.HOUR_OF_DAY, 16);
-        calendarTest.set(Calendar.MINUTE, 41);
+        //calendarTest.add(Calendar.MONTH, month);
+        calendarTest.set(Calendar.HOUR_OF_DAY, 17);
+        calendarTest.set(Calendar.MINUTE, 10);
         calendarTest.set(Calendar.SECOND, 0);
 
 
