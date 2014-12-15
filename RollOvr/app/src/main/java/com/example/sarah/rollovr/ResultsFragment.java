@@ -56,9 +56,9 @@ public class ResultsFragment extends Fragment {
                         Calendar c = Properties.getEstimatedDate();
 
                         //Set time to midnight
-                        //c.set(Calendar.HOUR_OF_DAY, 0);
-                        //c.set(Calendar.MINUTE, 0);
-                        //c.set(Calendar.SECOND, 0);
+                        c.set(Calendar.HOUR_OF_DAY, 0);
+                        c.set(Calendar.MINUTE, 0);
+                        c.set(Calendar.SECOND, 0);
 
                         //Ask our service to set an alarm for that date,
                         // this activity talks to the client that talks to the service
@@ -125,7 +125,7 @@ public class ResultsFragment extends Fragment {
         calendarTest.set(Calendar.SECOND, 0);
 
 
-        Properties.setEstimatedDate(calendarTest);
+        Properties.setEstimatedDate(calendar);
 
 
     }
