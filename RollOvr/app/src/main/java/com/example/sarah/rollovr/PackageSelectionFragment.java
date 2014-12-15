@@ -46,7 +46,7 @@ public class PackageSelectionFragment extends Fragment {
         ImageButton mediumPckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP24);
         ImageButton largePckBtn = (ImageButton)v.findViewById(R.id.imageButton_TP48);
 
-        Button nextPage = (Button)v.findViewById(R.id.nextPage);
+        Button nextPage = (Button)v.findViewById(R.id.nextHouseHold);
 
 
         View.OnClickListener packageListener = new View.OnClickListener() {
@@ -78,11 +78,12 @@ public class PackageSelectionFragment extends Fragment {
                         }
 
                         break;
-                    case(R.id.nextPage):
+                    case(R.id.nextHouseHold):
                         Fragment mFragment = new HouseAndTypeFragment();
                         FragmentManager fM = getFragmentManager();
                         FragmentTransaction fT = fM.beginTransaction();
-                        fT.replace(R.id.fragPackage, mFragment).commit();
+                        fT.replace(R.id.maincontainer, mFragment).commit();
+
                         break;
 
                 }
@@ -104,18 +105,7 @@ public class PackageSelectionFragment extends Fragment {
 
 
 
-    //Replaces current fragment with the Package Selection Fragment
-    public void HouseHoldFragmentStack(View view){
-        Fragment fr= null;
-        if (view == getView().findViewById(R.id.nextPage)) {
-            fr = new HouseAndTypeFragment();
-        }
 
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.maincontainer,fr);
-        fragmentTransaction.commit();
-    }
 
 
 }
