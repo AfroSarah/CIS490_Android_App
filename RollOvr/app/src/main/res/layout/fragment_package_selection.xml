@@ -7,11 +7,35 @@
     android:id="@+id/fragPackage"
     android:weightSum="1">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Toilet Paper Package Size"
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:autoText="false"
+        android:editable="false"
+        android:textSize="24dp"
+        android:padding="10dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select toilet paper package size."
+        android:id="@+id/textView2"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center" />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="1"
-        android:columnCount="3">
+        android:columnCount="3"
+        android:layout_marginTop="50dp">
 
         <ImageButton
             android:layout_width="128dp"
@@ -48,6 +72,7 @@
         android:id="@+id/nextPage"
         android:onClick="nextPage"
         android:textSize="36dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp" />
 
 </LinearLayout>
